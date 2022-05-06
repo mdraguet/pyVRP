@@ -131,7 +131,6 @@ def evaluate_time(distance_matrix, parameters, depot, subroute, velocity):
     time       = [0]*len(subroute_j)
     for i in range(0, len(time)):
         time[i] = time[i] + distance_matrix[(subroute_i[i], subroute_j[i])]/velocity[0]
-        print(time[i], tw_early[subroute_j][i])
         if (time[i] < tw_early[subroute_j][i]):
             wait[i] = tw_early[subroute_j][i] - time[i]
             time[i] = tw_early[subroute_j][i]
